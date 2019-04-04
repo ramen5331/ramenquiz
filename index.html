@@ -81,7 +81,7 @@
 		console.log('Successful login for: ' + response.name);
 		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></p>'
 		request = $.ajax({
-        url: "/quiz.php",
+        url: "/ramenquiz/quiz.php",
         type: "post",
         data: response
     	});
