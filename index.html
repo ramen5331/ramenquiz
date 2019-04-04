@@ -80,21 +80,26 @@
     FB.api('/me?fields=name,email', function(response) {
 		console.log('Successful login for: ' + response.name);
 		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></p>'
-		$.ajax({
-            type: "GET",
-            url: "quiz.html",
-            data: response,
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (response) {
-               if (response.d == true) {
-                    alert("You will now be redirected.");
-                }
-            },
-            failure: function (response) {
-                alert(response.d);
-            }
-        });
+		request = $.ajax({
+        url: "/quiz.php",
+        type: "post",
+        data: response
+    	});
+
+	    // Callback handler that will be called on success
+	    request.done(function (response, textStatus, jqXHR){
+	        // Log a message to the console
+	        console.log("Hooray, it worked!");
+	    });
+
+	    // Callback handler that will be called on failure
+	    request.fail(function (jqXHR, textStatus, errorThrown){
+	        // Log the error to the console
+	        console.error(
+	            "The following error occurred: "+
+	            textStatus, errorThrown
+	        );
+    });
     });
   }
 </script>
