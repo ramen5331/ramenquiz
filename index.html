@@ -78,7 +78,7 @@
     FB.api('/me?fields=name,email', function(response) {
 		console.log('Successful login for: ' + response.name);
 
-		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=login.php?name='+ response.name.replace(" ", "_") +'&email='+ response.email +'>Continue with facebook login</a></p>'
+		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.php?name='+ response.name.replace(" ", "_") +'&email='+ response.email +'>Continue with facebook login</a></p>'
     });
   }
 </script>
@@ -91,9 +91,9 @@
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-<button onclick='FB.AppEvents.logEvent("buttonClicked")'>
+<!--<button onclick='FB.AppEvents.logEvent("buttonClicked")'>
   Click me
-</button>
+</button>-->
 <div id="status">
 </div>
 </center>
