@@ -55,7 +55,7 @@
     //    your app or not.
     //
     // These three cases are handled in the callback function.
-
+    FB.AppEvents.logPageView();
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
@@ -91,7 +91,9 @@
 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-
+<button onclick='FB.AppEvents.logEvent("buttonClicked")'>
+  Click me
+</button>
 <div id="status">
 </div>
 </center>
