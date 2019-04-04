@@ -3,9 +3,10 @@
 <head>
 <title>Ramen Quiz Page</title>
 <meta charset="UTF-8">
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 </head>
 <body>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <center>
 <h1> Facebook login is required before taking the quiz </h1>
 <script type="text/javascript">
@@ -78,6 +79,7 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=name,email', function(response) {
 		console.log('Successful login for: ' + response.name);
+		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.php?name='+ response.name.replace(" ", "_") +'&email='+ response.email +'>Continue with facebook login</a></p>'
 		$.ajax({
             type: "POST",
             url: "Default.aspx/GetResponse",
