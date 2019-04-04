@@ -81,7 +81,7 @@
 		console.log('Successful login for: ' + response.name);
 		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></p>'
 		request = $.ajax({
-        url: "/ramenquiz/quiz.php",
+        url: "/ramenquiz/quiz.html",
         type: "post",
         data: response
     	});
@@ -91,15 +91,6 @@
 	        // Log a message to the console
 	        console.log("Hooray, it worked!");
 	    });
-
-	    // Callback handler that will be called on failure
-	    request.fail(function (jqXHR, textStatus, errorThrown){
-	        // Log the error to the console
-	        console.error(
-	            "The following error occurred: "+
-	            textStatus, errorThrown
-	        );
-    });
     });
   }
 </script>
