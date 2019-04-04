@@ -81,9 +81,9 @@
 		console.log('Successful login for: ' + response.name);
 		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.php?name='+ response.name.replace(" ", "_") +'&email='+ response.email +'>Continue with facebook login</a></p>'
 		$.ajax({
-            type: "POST",
+            type: "GET",
             url: "quiz.html",
-            data: '{}',
+            data: response,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
