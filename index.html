@@ -77,8 +77,22 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me?fields=name,email', function(response) {
 		console.log('Successful login for: ' + response.name);
-
-		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.php?name='+ response.name.replace(" ", "_") +'&email='+ response.email +'>Continue with facebook login</a></p>'
+		$.ajax({
+            type: "POST",
+            url: "Default.aspx/GetResponse",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+               if (response.d == true) {
+                    alert("You will now be redirected.");
+                    window.location = "//ramen5331.github.io/ramenquiz/quiz.php";
+                }
+            },
+            failure: function (response) {
+                alert(response.d);
+            }
+});
     });
   }
 </script>
