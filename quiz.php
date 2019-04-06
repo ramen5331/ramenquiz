@@ -8,8 +8,8 @@
 <body>
   <script>
 <?php
-echo $_POST['response'].'<br>';
-echo $_POST['name'];
+echo $_GET['response'].'<br>';
+echo $_GET['name'];
 ?>
 </script>
 </body>

@@ -82,7 +82,7 @@
 		document.getElementById("status").innerHTML = '<p>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></p>'
 		request = $.ajax({
         url: "/ramenquiz/quiz.php",
-        type: "post",
+        type: "get",
         data: response
     	});
 
