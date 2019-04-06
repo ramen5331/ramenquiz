@@ -60,7 +60,7 @@
     FB.AppEvents.logPageView();
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-    });
+    }, {scope: 'email'});
 
   };
 
