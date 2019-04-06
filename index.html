@@ -16,7 +16,8 @@
 </header>
 
 <section>
-  <nav>
+  <nav id="nav_panel">
+
   </nav>
   
   <article>
@@ -93,6 +94,9 @@
 		console.log('Successful login for: ' + response.name);
 		console.log('Test data: ' + response.email + " " + response.picture + " " + response.id);
 		document.getElementById("status").innerHTML = '<h2>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></h2>'
+		document.getElementById("nav_panel").innerHTML = '<ul>'+'<li><a href="index.html">Home</a></li>'
+		+'<li><a href="#">Quiz1</a></li>'+'<li><a href="#">Quiz2</a></li>'+
+      '<li><a href="#">Quiz3</a></li>'+'</ul>'
     });
   }
 </script>
