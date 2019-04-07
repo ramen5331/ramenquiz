@@ -21,9 +21,9 @@ while 1:
 	print ('%d: connection from %s' % (len(l), a))
 	filename = 'index.html'
 	f = open(filename, 'r')
-	c.send("HTTP/1.0 200 OK\n")
-	c.send("Content-Type: text/html\n")
-	c.send("\r\n")
+	c.sendall(str.encode("HTTP/1.0 200 OK\n",'ascii'))
+	c.sendall(str.encode('Content-Type: text/html\n', 'ascii'))
+	c.send(str.encode('\r\n'))
 	# send data per line
 	for l in f.readlines():
 		print('Sent ', repr(l))
