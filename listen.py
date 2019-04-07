@@ -3,10 +3,9 @@ import socket
 import sys
 
 if (len(sys.argv) != 2 or not sys.argv[1].isdigit()):
-	print ('Usage: listen <port>',)
-	exit()
-
-p = int(sys.argv[1])
+	p = int(os.environ.get("PORT", 17995)) # get default heroku port
+else:
+	p = int(sys.argv[1])	
 
 print ('Listening at port', p)
 

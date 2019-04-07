@@ -1,1 +1,1 @@
-web: python listen.py 8001
+web: python listen.py
