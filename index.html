@@ -97,6 +97,7 @@
 		$.ajax({
 		  type: "POST",
 		  url: "https://ramenquiz.herokuapp.com/",
+		  crossDomain: true,
 		  data: response,
 		  contentType: "application/json; charset=utf-8",
         	dataType: "json",
