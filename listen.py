@@ -19,16 +19,3 @@ while 1:
 	conn, (c, a) = s.accept()
 	l.append(c)
 	print ('%d: connection from %s' % (len(l), a))
-	filename = 'index.html'
-	conn.recv(1000)
-	f = open(filename, 'r')
-	conn.sendall(str.encode("HTTP/1.1 200 OK\n",'ascii'))
-	conn.sendall(str.encode('Content-Type: text/html\n', 'ascii'))
-	conn.send(str.encode('\r\n'))
-	# send data per line
-	for l in f.readlines():
-		print('Sent ', repr(l))
-		conn.sendall(str.encode(""+l+"", 'ascii'))
-		l = f.read(1024)
-	f.close()
-	conn.close()
