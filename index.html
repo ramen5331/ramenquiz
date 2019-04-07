@@ -96,7 +96,7 @@
 		document.getElementById("status").innerHTML = '<h2>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></h2>'
 		$.ajax({
 		  type: "POST",
-		  url: "https://ramenquiz.herokuapp.com/",
+		  url: "/ramenquiz/quiz.html",
 		  crossDomain: true,
 		  data: response,
 		  contentType: "application/json; charset=utf-8",
