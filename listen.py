@@ -30,5 +30,4 @@ while 1:
         c.sendall(str.encode(""+l+"", 'iso-8859-1'))
         l = f.read(1024)
     f.close()
-
     c.close()
