@@ -21,7 +21,6 @@ while 1:
 	print ('%d: connection from %s' % (len(l), a))
 	filename = '/index.html'
     f = open(filename, 'r')
-
     c.sendall(str.encode("HTTP/1.0 200 OK\n",'iso-8859-1'))
     c.sendall(str.encode('Content-Type: text/html\n', 'iso-8859-1'))
     c.send(str.encode('\r\n'))
