@@ -1,0 +1,5 @@
+lxml==4.3.0
+Pillow==5.4.1
+pynat==0.6.0
+python-docx==0.8.10
+tqdm==4.28.1
