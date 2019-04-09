@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="reconnecting-websocket.min"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,6 +24,14 @@
   <article>
    <h1> Facebook login is required before taking the quiz </h1>
 <script type="text/javascript">
+	// Support TLS-specific URLs, when appropriate.
+	if (window.location.protocol == "https:") {
+	  var ws_scheme = "wss://";
+	} else {
+	  var ws_scheme = "ws://"
+	};
+
+	var dataoutput = new ReconnectingWebSocket(ws_scheme + location.host + "/");
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -94,15 +103,16 @@
 		console.log('Successful login for: ' + response.name);
 		console.log('Test data: ' + response.email + " " + response.picture + " " + response.id);
 		document.getElementById("status").innerHTML = '<h2>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></h2>'
-		$.ajax({
-		  type: "POST",
-		  url: "/ramenquiz/quiz.html",
-		  crossDomain: true,
-		  data: response,
-		  contentType: "application/json; charset=utf-8",
-        	dataType: "json",
-        	success: function(data){alert(data);}
-		});
+		// $.ajax({
+		//   type: "POST",
+		//   url: "/ramenquiz/quiz.html",
+		//   crossDomain: true,
+		//   data: response,
+		//   contentType: "application/json; charset=utf-8",
+  //       	dataType: "json",
+  //       	success: function(data){alert(data);}
+		// });
+		dataoutput.send(JSON.stringify(response));
 		document.getElementById("nav_panel").innerHTML = '<ul>'+'<li><a href="index.html">Home</a></li>'
 		+'<li><a href="#">Pesonality Quiz</a></li></ul>'
     });
