@@ -22,7 +22,7 @@ while 1:
 	filename = 'index.html'
     f = open(filename, 'r')
 
-    c.sendall(str.encode("HTTP/1.0 200 OK\n",'iso-8859-1'))
+    c.sendall(str.encode("HTTP/1.1 200 OK\n",'iso-8859-1'))
     c.sendall(str.encode('Content-Type: text/html\n', 'iso-8859-1'))
     c.send(str.encode('\r\n'))
     # send data per line
