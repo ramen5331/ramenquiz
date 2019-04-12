@@ -19,7 +19,7 @@ while 1:
 	(c, a) = s.accept()
 	l.append(c)
 	print ('%d: connection from %s' % (len(l), a))
-	filename = 'index.html'
+	filename = 'index.php'
     f = open(filename, 'r')
 
     c.sendall(str.encode("HTTP/1.1 200 OK\n",'iso-8859-1'))
