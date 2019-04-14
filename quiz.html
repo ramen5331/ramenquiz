@@ -1,160 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ramen Quiz Page</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-<link rel="stylesheet" href="styles.css">
+    <title>Ramen Quiz Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-<center>
-
-<header>
-  <h2>Quiz Time!</h2>
+<header class="light-green">
+    <h1>Big Five Personality Test</h1>
 </header>
 
-<section>
-  <nav>
-  	<ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="quiz.html">Pesonality Quiz</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-  	<form id="myForm">
-  	<table style="width:100%">
-  <tr>
-    <th>No.</th>
-    <th>Question</th>
-    <th>Strongly Disagree</th>
-    <th>Disagree</th>
-    <th>Neutral</th>
-    <th>Agree</th>
-    <th>Strongly Agree</th>
-  </tr>
-  <tr>
-    <th>1.</th>
-    <td>Feel comfortable around people.</td>
-    <td style="text-align:center"><input type="radio" name="one" value=1 /></td>
-    <td style="text-align:center"><input type="radio" name="one" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="one" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="one" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="one" value=5 /></td>
-  </tr>
-  <tr>
-  	<th>2.</th>
-    <td>Don't like to draw attention to myself.</td>
-    <td style="text-align:center"><input type="radio" name="two" value=5 /></td>
-    <td style="text-align:center"><input type="radio" name="two" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="two" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="two" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="two" value=1 /></td>
-  </tr>
-  <tr>
-    <th>3.</th>
-    <td>Sympathize with others' feelings.</td>
-    <td style="text-align:center"><input type="radio" name="three" value=1 /></td>
-    <td style="text-align:center"><input type="radio" name="three" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="three" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="three" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="three" value=5 /></td>
-  </tr>
-  <tr>
-    <th>4.</th>
-    <td>Am not interested in other people's problems.</td>
-    <td style="text-align:center"><input type="radio" name="four" value=5 /></td>
-    <td style="text-align:center"><input type="radio" name="four" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="four" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="four" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="four" value=1 /></td>
-  </tr>
-  <tr>
-    <th>5.</th>
-    <td>Am always prepared.</td>
-    <td style="text-align:center"><input type="radio" name="five" value=1 /></td>
-    <td style="text-align:center"><input type="radio" name="five" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="five" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="five" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="five" value=5 /></td>
-  </tr>
-  <tr>
-    <th>6.</th>
-    <td>Often forget to put things back in their proper place.</td>
-    <td style="text-align:center"><input type="radio" name="six" value=5 /></td>
-    <td style="text-align:center"><input type="radio" name="six" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="six" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="six" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="six" value=1 /></td>
-  </tr>
-  <tr>
-    <th>7.</th>
-    <td>Am relaxed most of the time.</td>
-    <td style="text-align:center"><input type="radio" name="seven" value=1 /></td>
-    <td style="text-align:center"><input type="radio" name="seven" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="seven" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="seven" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="seven" value=5 /></td>
-  </tr>
-  <tr>
-    <th>8.</th>
-    <td>Change my mood a lot.</td>
-    <td style="text-align:center"><input type="radio" name="eight" value=5 /></td>
-    <td style="text-align:center"><input type="radio" name="eight" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="eight" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="eight" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="eight" value=1 /></td>
-  </tr>
-  <tr>
-    <th>9.</th>
-    <td>Spend time reflecting on things.</td>
-    <td style="text-align:center"><input type="radio" name="nine" value=1 /></td>
-    <td style="text-align:center"><input type="radio" name="nine" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="nine" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="nine" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="nine" value=5 /></td>
-  </tr>
-  <tr>
-    <th>10.</th>
-    <td>Do not have a good imagination.</td>
-    <td style="text-align:center"><input type="radio" name="ten" value=5 /></td>
-    <td style="text-align:center"><input type="radio" name="ten" value=4 /></td>
-    <td style="text-align:center"><input type="radio" name="ten" value=3 /></td>
-    <td style="text-align:center"><input type="radio" name="ten" value=2 /></td>
-    <td style="text-align:center"><input type="radio" name="ten" value=1 /></td>
-  </tr>
-</table>
-	<p><input type="submit" value="Submit" style="text-align:center"></p>
-	<div id="stats"></div>
-	</form>
-  </article>
-</section>
+<body>
 
-<script type='text/javascript'>
+<div>
 
-$(document).ready(function () {
-    $('#myForm').on('submit', function (e) {
-        var value = $("[type=radio]:checked").length;
-        if (value<10){
-        	alert("You have answered " + value + " questions only.\n" + "Please complete all questions to get you final results. Thanks! =)");
-	    }
-	    else{
-	    	var sumval = parseInt($("[name=one]:checked").val()) + parseInt($("[name=two]:checked").val())+ parseInt($("[name=three]:checked").val())+ parseInt($("[name=four]:checked").val())+ parseInt($("[name=five]:checked").val())+ parseInt($("[name=six]:checked").val())+ parseInt($("[name=seven]:checked").val())+ parseInt($("[name=eight]:checked").val())+ parseInt($("[name=nine]:checked").val())+ parseInt($("[name=ten]:checked").val());
-	    	alert("Total: " + sumval);
-	    }
-        e.preventDefault();
-    })
-});
+    <div>
+        <nav class="light-green darken-3">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Personality Quiz</a></li>
+            </ul>
+        </nav>
 
-</script>
+        <div class="row">
+            <div class="col s12">
+                <form id="myForm">
+                    <table style="width:100%">
+                        <tr>
+                            <th>No.</th>
+                            <th>Question</th>
+                            <th>Strongly Disagree</th>
+                            <th>Disagree</th>
+                            <th>Neutral</th>
+                            <th>Agree</th>
+                            <th>Strongly Agree</th>
+                        </tr>
+                        <tr>
+                            <th>1.</th>
+                            <td>Feel comfortable around people.</td>
+                            <td style="text-align:center"><label><input type="radio" name="one" value=1/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="one" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="one" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="one" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="one" value=5/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>2.</th>
+                            <td>Don't like to draw attention to myself.</td>
+                            <td style="text-align:center"><label><input type="radio" name="two" value=5/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="two" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="two" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="two" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="two" value=1/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>3.</th>
+                            <td>Sympathize with others' feelings.</td>
+                            <td style="text-align:center"><label><input type="radio" name="three" value=1/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="three" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="three" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="three" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="three" value=5/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>4.</th>
+                            <td>Am not interested in other people's problems.</td>
+                            <td style="text-align:center"><label><input type="radio" name="four" value=5/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="four" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="four" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="four" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="four" value=1/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>5.</th>
+                            <td>Am always prepared.</td>
+                            <td style="text-align:center"><label><input type="radio" name="five" value=1/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="five" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="five" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="five" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="five" value=5/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>6.</th>
+                            <td>Often forget to put things back in their proper place.</td>
+                            <td style="text-align:center"><label><input type="radio" name="six" value=5/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="six" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="six" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="six" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="six" value=1/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>7.</th>
+                            <td>Am relaxed most of the time.</td>
+                            <td style="text-align:center"><label><input type="radio" name="seven" value=1/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="seven" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="seven" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="seven" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="seven" value=5/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>8.</th>
+                            <td>Change my mood a lot.</td>
+                            <td style="text-align:center"><label><input type="radio" name="eight" value=5/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="eight" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="eight" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="eight" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="eight" value=1/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>9.</th>
+                            <td>Spend time reflecting on things.</td>
+                            <td style="text-align:center"><label><input type="radio" name="nine" value=1/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="nine" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="nine" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="nine" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="nine" value=5/><span/></label></td>
+                        </tr>
+                        <tr>
+                            <th>10.</th>
+                            <td>Do not have a good imagination.</td>
+                            <td style="text-align:center"><label><input type="radio" name="ten" value=5/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="ten" value=4/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="ten" value=3/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="ten" value=2/><span/></label></td>
+                            <td style="text-align:center"><label><input type="radio" name="ten" value=1/><span/></label></td>
+                        </tr>
+                    </table>
+                    <p><input type="submit" value="Submit" style="text-align:center"></p>
+                    <div id="stats"></div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<footer>
-<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-</footer>
+    <script type='text/javascript'>
 
-</center>
+        $(document).ready(function () {
+            $('#myForm').on('submit', function (e) {
+                var value = $("[type=radio]:checked").length;
+                if (value < 10) {
+                    alert("You have answered " + value + " questions only.\n" + "Please complete all questions to get your final results. Thanks! =)");
+                }
+                else {
+                    var result = "Results: \n";
+                    var factor1 = parseInt($("[name=one]:checked").val()) +
+                        parseInt($("[name=two]:checked").val());
+
+                    var factor2  = parseInt($("[name=three]:checked").val()) +
+                        parseInt($("[name=four]:checked").val());
+
+                    var factor3 = parseInt($("[name=five]:checked").val()) +
+                        parseInt($("[name=six]:checked").val());
+
+                    var factor4 = parseInt($("[name=seven]:checked").val()) +
+                        parseInt($("[name=eight]:checked").val());
+
+                    var factor5 = parseInt($("[name=nine]:checked").val()) +
+                        parseInt($("[name=ten]:checked").val());
+
+                    result += "Extraversion: " + factor1 + "\n" +
+                        "Agreeableness: " + factor2 + "\n" +
+                        "Conscientiousness: " + factor3 + "\n" +
+                        "Emotional Stability: " + factor4 + "\n" +
+                        "Imagination: " + factor5 + "\n\n Thank you for taking part! You may close the page now ^^";
+
+                        alert(result);
+                }
+                e.preventDefault();
+            })
+        });
+
+    </script>
+
+    <footer>
+        <fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+    </footer>
+
+</div>
 </body>
 </html>
