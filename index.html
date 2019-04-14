@@ -1,134 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ramen Quiz Page</title>
-<link rel="shortcut icon" href="#" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-<link rel="stylesheet" href="styles.css">
+    <title>Ramen Quiz Page</title>
+    <link rel="shortcut icon" href="#"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-<center>
-
-<header>
-  <h2>Welcome to Quiz Page</h2>
+<header class="light-green">
+    <h1>Big Five Personality Test</h1>
 </header>
 
-<section>
-  <nav id="nav_panel">
+<body class="light-green lighten-3">
+<div class="container">
 
-  </nav>
-  
-  <article>
-   <h1> Facebook login is required before taking the quiz </h1>
-<script type="text/javascript">
-  // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else {
-      // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    }
-  }
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        Welcome!
+                    </div>
 
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
+                    Thank you for coming to take this quiz.
 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '428321031259397',
-      cookie     : true,  // enable cookies to allow the server to access 
-                          // the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v3.1' // The Graph API version to use for the call
-    });
+                    This is a project by Team Ramen for NUS CS5331, 2019.
 
-    // Now that we've initialized the JavaScript SDK, we call 
-    // FB.getLoginStatus().  This function gets the state of the
-    // person visiting this page and can return one of three states to
-    // the callback you provide.  They can be:
-    //
-    // 1. Logged into your app ('connected')
-    // 2. Logged into Facebook, but not your app ('not_authorized')
-    // 3. Not logged into Facebook and can't tell if they are logged into
-    //    your app or not.
-    //
-    // These three cases are handled in the callback function.
-    FB.AppEvents.logPageView();
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
+                    We hope you enjoy your time here.
 
-  };
+                    <br>
+                    <br>
 
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+                    <div class="card-title">
+                        Introduction
+                    </div>
+                    Psychological researchers often use a five-factor model to evaluate what are believed to be five core aspects, or traits, of an individual’s personality. Commonly referred to as the “Big 5,” these traits include openness to experience, conscientiousness, extraversion-introversion, agreeableness, and neuroticism.
+                    <br>
+                    <br>
+                    Take this quiz to find out how you fare in the Big 5 model!
 
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me?fields=name,email,picture,id,short_name', function(response) {
-		console.log('Successful login for: ' + response.name);
-		console.log('Test data: ' + response.email + " " + response.picture + " " + response.id);
-		document.getElementById("status").innerHTML = '<h2>Welcome '+response.name+'! <a href=quiz.html>Continue with facebook login</a></h2>'
-		$.ajax({
-		  type: "POST",
-		  url: "/",
-		  crossDomain: true,
-		  data: response,
-		  contentType: "application/json; charset=utf-8",
-        	dataType: "json",
-        	success: function(data){alert(data);}
-		});
-		document.getElementById("nav_panel").innerHTML = '<ul>'+'<li><a href="index.html">Home</a></li>'
-		+'<li><a href="#">Pesonality Quiz</a></li></ul>'
-    });
-  }
-</script>
+                    <h4>Facebook login is required before taking the quiz</h4>
+                    <script type="text/javascript">
+                        // This is called with the results from from FB.getLoginStatus().
+                        function statusChangeCallback(response) {
+                            console.log('statusChangeCallback');
+                            console.log(response);
+                            // The response object is returned with a status field that lets the
+                            // app know the current login status of the person.
+                            // Full docs on the response object can be found in the documentation
+                            // for FB.getLoginStatus().
+                            if (response.status === 'connected') {
+                                // Logged into your app and Facebook.
+                                testAPI();
+                            } else {
+                                // The person is not logged into your app or we are unable to tell.
+                                document.getElementById('status').innerHTML = 'Please log ' +
+                                    'into this app.';
+                            }
+                        }
 
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
+                        // This function is called when someone finishes with the Login
+                        // Button.  See the onlogin handler attached to it in the sample
+                        // code below.
+                        function checkLoginState() {
+                            FB.getLoginStatus(function (response) {
+                                statusChangeCallback(response);
+                            });
+                        }
 
-<fb:login-button autologoutlink="true" scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-<!--<button onclick='FB.AppEvents.logEvent("buttonClicked")'>
-  Click me
-</button>-->
-<div id="status">
+                        window.fbAsyncInit = function () {
+                            FB.init({
+                                appId: '428321031259397',
+                                cookie: true,  // enable cookies to allow the server to access
+                                               // the session
+                                xfbml: true,  // parse social plugins on this page
+                                version: 'v3.1' // The Graph API version to use for the call
+                            });
+
+                            // Now that we've initialized the JavaScript SDK, we call
+                            // FB.getLoginStatus().  This function gets the state of the
+                            // person visiting this page and can return one of three states to
+                            // the callback you provide.  They can be:
+                            //
+                            // 1. Logged into your app ('connected')
+                            // 2. Logged into Facebook, but not your app ('not_authorized')
+                            // 3. Not logged into Facebook and can't tell if they are logged into
+                            //    your app or not.
+                            //
+                            // These three cases are handled in the callback function.
+                            FB.AppEvents.logPageView();
+                            FB.getLoginStatus(function (response) {
+                                statusChangeCallback(response);
+                            });
+
+                        };
+
+                        // Load the SDK asynchronously
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "https://connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+
+                        // Here we run a very simple test of the Graph API after login is
+                        // successful.  See statusChangeCallback() for when this call is made.
+                        function testAPI() {
+                            console.log('Welcome!  Fetching your information.... ');
+                            FB.api('/me?fields=name,email,picture,id,short_name', function (response) {
+                                console.log('Successful login for: ' + response.name);
+                                console.log('Test data: ' + response.email + " " + response.picture + " " + response.id);
+                                document.getElementById("status").innerHTML = '<h2>Welcome ' + response.name + '! <a href=quiz.html>Continue with facebook login</a></h2>'
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/",
+                                    crossDomain: true,
+                                    data: response,
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (data) {
+                                        alert(data);
+                                    }
+                                });
+                                document.getElementById("nav_panel").innerHTML = '<ul>' + '<li><a href="index.html">Home</a></li>'
+                                    + '<li><a href="#">Pesonality Quiz</a></li></ul>'
+                            });
+                        }
+                    </script>
+
+                    <!--
+                      Below we include the Login Button social plugin. This button uses
+                      the JavaScript SDK to present a graphical Login button that triggers
+                      the FB.login() function when clicked.
+                    -->
+
+                    <fb:login-button autologoutlink="true" scope="public_profile,email"
+                                     onlogin="checkLoginState();">
+                    </fb:login-button>
+                    <!--<button onclick='FB.AppEvents.logEvent("buttonClicked")'>
+                      Click me
+                    </button>-->
+                    <div id="status">
+                    </div>
+                    <script type="text/javascript">
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
-<script type="text/javascript">
-</script>
-  </article>
-</section>
-
-
-</center>
 </body>
 </html>
